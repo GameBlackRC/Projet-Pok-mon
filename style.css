@@ -1,0 +1,18 @@
+.titre_liste {
+
+    border-style: solid;
+    border-radius: 5px;
+    padding: 1%;
+    transition: 0.5s;
+
+}
+
+.titre_liste:hover {
+
+    background-color: black;
+    box-shadow: 0 0 1em black;
+    border-color: black;
+    color: white;
+    transition: 0.5s;
+
+}
