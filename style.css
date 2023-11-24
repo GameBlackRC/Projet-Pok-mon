@@ -7,23 +7,13 @@
 
 }
 
-.types img {
+.types img{
 
     margin-right: 4%;
-    width: 40%;
 
 }
 
 .titre_liste {
-
-    border-style: solid;
-    border-radius: 5px;
-    padding: 1%;
-    transition: 0.5s;
-
-}
-
-.ListeGen {
 
     border-style: solid;
     border-radius: 5px;
@@ -47,7 +37,7 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #2222226e;
+    background-color: #222222;
     padding: 10px;
     z-index: 1;
     font-family: "Space Grotesk";
@@ -72,7 +62,7 @@ nav a:hover {
 
 main {
 
-    margin-top: 6%;
+    margin-top: 10%;
 
 }
 
@@ -84,27 +74,71 @@ footer {
 
 }
 
-h1 {
-    color: #ff0000;
-    font-size: 20px;
-    padding: 10px 10px;
+body {
+
+    background-color: #333333;
+    color: white;
+
+}
+
+.img_poke{
+
+    margin-top: -15%;
+
+}
+
+.fiche h2 {
+
+    text-align: center;
+
+}
+
+.fiche {
+
+    width: 15%;
+    background-color: #222222;
     border-radius: 10px;
-    margin-left: 10%;
-    margin-top: 10%;
-}
-.boutton {
-    display: inline-block;
-    margin-right: 10px; 
-    padding: 20px;
-    border-radius: 20px;
-    background-color: rgb(255, 2, 2);
-    width: 30px;
-    transition: background-color 0.3s; 
+    padding: 2%;
+    margin: 2%;
+
 }
 
-.boutton:hover {
-    background-color: blue; 
+.liste_fiche_poke{
+
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
+.fiche:hover{
 
+    box-shadow: 0 0 1em black;
+    transition: 1s;
 
+}
+
+.img_poke_detail{
+
+    float: left;
+    margin-right: 10%;
+
+}
+
+.evolution{
+
+    margin-top: 17%;
+    
+}
+
+.evolution a{
+
+    float: left;
+    width: 30%;
+
+}
+
+.evolution a div.fiche{
+
+    width: 50%;
+
+}
