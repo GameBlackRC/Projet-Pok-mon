@@ -91,14 +91,14 @@ function fichePoke(poke, balise) {
 
     if(poke['types'] == undefined) {
 
-        $(balise).append("<div class='fiche' onclick='fichePokeDetail(" + poke["pokedexId"] + "," + balise + ")'><h2>" + poke["pokedexId"] + " " + poke["name"]["fr"] + "</h2><img class='img_poke' src='" + poke["sprites"]["regular"] + "' width='100%'></div>")
+        $(balise).append("<div class='fiche' onclick='fichePokeDetail(" + poke["pokedexId"] + ',"' + balise + '"' + ")'><h2>" + poke["pokedexId"] + " " + poke["name"]["fr"] + "</h2><img class='img_poke' src='" + poke["sprites"]["regular"] + "' width='100%'></div>")
 
     }
     else if(poke['types'][1] == undefined) {
 
         console.log("1 type " + poke['types']);
 
-        $(balise).append("<div class='fiche' onclick='fichePokeDetail(" + poke["pokedexId"] + "," + balise + ")'><h2>" + poke["pokedexId"] + " " + poke["name"]["fr"] + "</h2><img class='img_poke' src='" + poke["sprites"]["regular"] + "' width='100%'><div class='types'><img src='" + poke["types"][0]["image"] + "'></div></div>")
+        $(balise).append("<div class='fiche' onclick='fichePokeDetail(" + poke["pokedexId"] + ',"' + balise + '"' + ")'><h2>" + poke["pokedexId"] + " " + poke["name"]["fr"] + "</h2><img class='img_poke' src='" + poke["sprites"]["regular"] + "' width='100%'><div class='types'><img src='" + poke["types"][0]["image"] + "'></div></div>")
 
     }
     else {
@@ -112,6 +112,9 @@ function fichePoke(poke, balise) {
 function fichePokeById(id) {
 
     let poke = liste_poke.filter((poke_) => poke_['pokedexId'] == id)[0];
+
+    console.log(id);
+    console.log(poke);
 
     if(poke['types'] == undefined) {
 
@@ -139,6 +142,9 @@ function fichePokeDetail(id, balise) {
 
     let poke = liste_poke.filter((poke_) => poke_['pokedexId'] == id)[0];
 
+    console.log(id);
+    console.log(poke);
+
     if(poke['types'] == undefined) {
 
         let contenu = "<div class='fiche_poke_detail'><h2 style='text-align: center;'>#" + poke["pokedexId"] + " " + poke["name"]["fr"] + "</h2><div class='infos'><img class='img_poke_detail' src='" + poke["sprites"]["regular"] + "' width='25%'><div class='infos_texte'><h3>Types :</h3><br><div class='types'></div><h3>Génération : " + poke["generation"] + "</h3><div class='evolution'>";
@@ -159,17 +165,6 @@ function fichePokeDetail(id, balise) {
             contenu += "<h3>Évolution</h3><br>";
 
             poke["evolution"]["next"].forEach((evo) => {
-
-                contenu += fichePokeById(evo["pokedexId"]);
-
-            })
-
-        }
-        if(poke["evolution"]["mega"] != null) {
-
-            contenu += "<h3>Méga-évolution</h3><br>";
-
-            poke["evolution"]["mega"].forEach((evo) => {
 
                 contenu += fichePokeById(evo["pokedexId"]);
 
@@ -207,17 +202,6 @@ function fichePokeDetail(id, balise) {
             })
 
         }
-        if(poke["evolution"]["mega"] != null) {
-
-            contenu += "<h3>Méga-évolution</h3><br>";
-
-            poke["evolution"]["mega"].forEach((evo) => {
-
-                contenu += fichePokeById(evo["pokedexId"]);
-
-            })
-
-        }
         contenu += "</div></div></div></div>";
 
     }
@@ -241,17 +225,6 @@ function fichePokeDetail(id, balise) {
             contenu += "<h3>Évolution</h3><br>";
 
             poke["evolution"]["next"].forEach((evo) => {
-
-                contenu += fichePokeById(evo["pokedexId"]);
-
-            })
-
-        }
-        if(poke["evolution"]["mega"] != null) {
-
-            contenu += "<h3>Méga-évolution</h3><br>";
-
-            poke["evolution"]["mega"].forEach((evo) => {
 
                 contenu += fichePokeById(evo["pokedexId"]);
 
