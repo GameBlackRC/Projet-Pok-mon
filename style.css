@@ -1,3 +1,19 @@
+.info_random {
+
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: space-between;
+
+}
+
+.types img{
+
+    margin-right: 4%;
+    width: 40%;
+
+}
+
 .titre_liste {
 
     border-style: solid;
