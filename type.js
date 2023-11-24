@@ -14,10 +14,11 @@ $(document).ready(function () {
 });
 
 function CategoryType(type) {
-    document.getElementById("ListeType").innerHTML = ""
+    document.getElementById("ListeType").innerHTML = "";
+    console.log("ok " + type);
+    console.log(tableau);
   
-let Liste= tableau.filter((poke)=>poke["types"]["name"]==type
-)
+let Liste = tableau.filter((poke)=>poke["types"][0]["name"]==type || (poke["types"].lenght && poke["types"][1]["name"]==type));
 Liste.forEach (function (item) { 
     console.log(item)
     document.getElementById("ListeType").innerHTML += "<div class='feu'><p>" + item["name"]["fr"] + "</p>"});
@@ -32,7 +33,9 @@ function TypeFiche () {
 
             json.forEach(function (item) {
 
-                document.getElementById("type").innerHTML += "<img src='"+item ["sprites"]+"' class='titre_liste' onclick='CategoryType(\""+item["name"]["fr"]+"\")'/>";
+                type = item["name"]["fr"];
+                console.log(type);
+                document.getElementById("type").innerHTML += "<img src='"+item ["sprites"]+"' class='titre_liste' onclick=" + '"CategoryType(' + "'" + item["name"]["fr"] + "'" + ')"/>';
                
 
             });
