@@ -10,15 +10,43 @@
     <script src='script2.js'></script>
 </head>
 <body>
-    <div class="random">
+
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="ListeGen.html">Liste Génération</a>
+            <a href="Recherche.html">Recherche</a>
+        </nav>
+    </header>
+
+    <script>
+        $(document).ready(function() {
+            fetch('https://tyradex.vercel.app/api/v1/pokemon')
+            .then((response) => response.json())
+            .then((json) => {
+
+                liste_poke = json;
+                randomPokeAccueil();
+
+            });
+
+        });
+    </script>
+
+    <main>
+
+        <div class="random">
 
 
 
-    </div>
-    <div class="fiche_poke" style="display: none;">
+        </div>
+        <div class="fiche_poke" style="display: none;">
 
 
 
-    </div>
+        </div>
+
+    </main>
+
 </body>
 </html>
