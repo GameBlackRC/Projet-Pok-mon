@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 });
 
-function toggleDetailList() {
+function toggleDetailList() { 
 
     $("#detail").toggle();
     $("#demo").toggle();
